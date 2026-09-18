@@ -1,0 +1,6 @@
+{
+  "name": "Monera Neobank",
+  "description": "Non-custodial neobank on Monad L1 with Privy embedded wallets, Sudo Africa Mastercard JIT card issuing, and NIBSS NQR payments for Nigeria.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

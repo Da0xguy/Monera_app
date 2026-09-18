@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 210" fill="none" width="100%" height="100%">
+  <g fill="currentColor">
+    <!-- Central Inverted Triangle -->
+    <polygon points="88,10 172,10 130,78" />
+    
+    <!-- Outer Winged M Chevron -->
+    <polygon points="10,10 66,10 130,110 194,10 250,10 130,195" />
+    
+    <!-- Left Flanking Triangle (Pointing UP) -->
+    <polygon points="32,108 5,150 59,150" />
+    
+    <!-- Right Flanking Triangle (Pointing UP) -->
+    <polygon points="228,108 201,150 255,150" />
+  </g>
+</svg>
