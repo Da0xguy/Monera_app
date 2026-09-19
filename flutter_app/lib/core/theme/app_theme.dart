@@ -16,7 +16,7 @@ class AppTheme {
         surface: AppColors.surface,
         background: AppColors.background,
         error: AppColors.crimsonRed,
-        onPrimary: Colors.black,
+        onPrimary: AppColors.black,
         onSurface: AppColors.textPrimary,
       ),
       fontFamily: 'PlusJakartaSans',
@@ -37,7 +37,7 @@ class AppTheme {
           letterSpacing: -0.3,
         ),
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppColors.surface,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
@@ -67,8 +67,10 @@ class AppTheme {
         unselectedItemColor: AppColors.textTertiary,
         type: BottomNavigationBarType.fixed,
         elevation: 0,
-        selectedLabelStyle: TextStyle(fontSize: 10, fontWeight: FontWeight.w700),
-        unselectedLabelStyle: TextStyle(fontSize: 10, fontWeight: FontWeight.w500),
+        selectedLabelStyle:
+            TextStyle(fontSize: 10, fontWeight: FontWeight.w700),
+        unselectedLabelStyle:
+            TextStyle(fontSize: 10, fontWeight: FontWeight.w500),
       ),
       dividerTheme: const DividerThemeData(
         color: AppColors.borderSubtle,

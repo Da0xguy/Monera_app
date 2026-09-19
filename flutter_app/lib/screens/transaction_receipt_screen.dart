@@ -175,7 +175,7 @@ class TransactionReceiptScreen extends StatelessWidget {
 
   Widget _buildRow(String label, String value, {Color? valueColor, bool isMonospace = false}) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.between,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(label, style: const TextStyle(color: AppColors.textSecondary, fontSize: 12)),

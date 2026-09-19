@@ -57,7 +57,7 @@ class WalletHomeScreen extends ConsumerWidget {
     WalletNotifier notifier,
   ) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.between,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
           children: [
@@ -188,7 +188,7 @@ class WalletHomeScreen extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.between,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
                         'AVAILABLE BALANCE',
@@ -365,7 +365,7 @@ class WalletHomeScreen extends ConsumerWidget {
 
   Widget _buildTransactionHeader() {
     return const Row(
-      mainAxisAlignment: MainAxisAlignment.between,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           'Recent Ledger Activity',
@@ -491,7 +491,7 @@ class WalletHomeScreen extends ConsumerWidget {
               child: const Column(
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.between,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text('Bank Name', style: TextStyle(color: AppColors.textSecondary, fontSize: 12)),
                       Text('Wema Bank / ALAT', style: TextStyle(color: AppColors.textPrimary, fontWeight: FontWeight.bold, fontSize: 13)),
@@ -499,7 +499,7 @@ class WalletHomeScreen extends ConsumerWidget {
                   ),
                   SizedBox(height: 8),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.between,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text('Account Number', style: TextStyle(color: AppColors.textSecondary, fontSize: 12)),
                       Text('0291884721', style: TextStyle(color: AppColors.electricBlue, fontWeight: FontWeight.bold, fontSize: 14)),

@@ -72,7 +72,7 @@ class _EarnScreenState extends ConsumerState<EarnScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.between,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
                         'IDLE CAPITAL YIELD VAULT',
@@ -148,7 +148,7 @@ class _EarnScreenState extends ConsumerState<EarnScreen> {
                   ),
                   const Divider(height: 20),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.between,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text('Contract Address', style: TextStyle(color: AppColors.textTertiary, fontSize: 11)),
                       Text(
