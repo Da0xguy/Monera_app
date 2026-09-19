@@ -57,101 +57,41 @@ class WalletHomeScreen extends ConsumerWidget {
     WalletNotifier notifier,
   ) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Row(
+        MoneraLogo(
+          size: 28,
+          color: AppColors.textPrimary.withOpacity(0.9),
+        ),
+        const SizedBox(width: 12),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: 42,
-              height: 42,
-              padding: const EdgeInsets.all(6),
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [AppColors.cobaltBlue, AppColors.electricBlue],
-                ),
-                borderRadius: BorderRadius.circular(14),
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.electricBlue.withOpacity(0.3),
-                    blurRadius: 10,
-                  ),
-                ],
-              ),
-              child: const Center(
-                child: MoneraLogo(size: 24, color: Colors.white),
-              ),
+            Text(
+              state.user.name,
+              style: const TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 14,
+                  color: AppColors.textPrimary),
             ),
-            const SizedBox(width: 12),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Row(
               children: [
-                Text(
-                  state.user.name,
-                  style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 14, color: AppColors.textPrimary),
+                Container(
+                  width: 6,
+                  height: 6,
+                  decoration: const BoxDecoration(
+                      color: AppColors.emeraldGreen, shape: BoxShape.circle),
                 ),
-                Row(
-                  children: [
-                    Container(
-                      width: 6,
-                      height: 6,
-                      decoration: const BoxDecoration(color: AppColors.emeraldGreen, shape: BoxShape.circle),
-                    ),
-                    const SizedBox(width: 5),
-                    const Text(
-                      'Monad L1 (10143) • Tier 3 Verified',
-                      style: TextStyle(fontSize: 10, color: AppColors.textSecondary),
-                    ),
-                  ],
+                const SizedBox(width: 5),
+                const Text(
+                  'Monad L1 (10143) • Tier 3 Verified',
+                  style:
+                      TextStyle(fontSize: 10, color: AppColors.textSecondary),
                 ),
               ],
             ),
           ],
         ),
-
-        // Currency Pill (NGN | USD | MONAD)
-        Container(
-          padding: const EdgeInsets.all(3),
-          decoration: BoxDecoration(
-            color: AppColors.surface,
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: AppColors.borderSubtle),
-          ),
-          child: Row(
-            children: [
-              _buildCurrencyChip('NGN', CurrencyType.ngn, state.selectedCurrency, notifier),
-              _buildCurrencyChip('USD', CurrencyType.usd, state.selectedCurrency, notifier),
-              _buildCurrencyChip('MONAD', CurrencyType.monad, state.selectedCurrency, notifier),
-            ],
-          ),
-        ),
       ],
-    );
-  }
-
-  Widget _buildCurrencyChip(
-    String label,
-    CurrencyType type,
-    CurrencyType active,
-    WalletNotifier notifier,
-  ) {
-    final isSelected = type == active;
-    return GestureDetector(
-      onTap: () => notifier.setCurrency(type),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-        decoration: BoxDecoration(
-          color: isSelected ? AppColors.electricBlue : Colors.transparent,
-          borderRadius: BorderRadius.circular(14),
-        ),
-        child: Text(
-          label,
-          style: TextStyle(
-            fontSize: 10,
-            fontWeight: FontWeight.bold,
-            color: isSelected ? Colors.black : AppColors.textTertiary,
-          ),
-        ),
-      ),
     );
   }
 
@@ -161,7 +101,8 @@ class WalletHomeScreen extends ConsumerWidget {
       decoration: BoxDecoration(
         gradient: AppColors.balanceCardGradient,
         borderRadius: BorderRadius.circular(26),
-        border: Border.all(color: AppColors.borderGlow.withOpacity(0.6), width: 1.2),
+        border: Border.all(
+            color: AppColors.borderGlow.withOpacity(0.6), width: 1.2),
         boxShadow: [
           BoxShadow(
             color: AppColors.cobaltBlue.withOpacity(0.2),
@@ -178,8 +119,11 @@ class WalletHomeScreen extends ConsumerWidget {
               right: -15,
               bottom: -15,
               child: Opacity(
-                opacity: 0.08,
-                child: const MoneraLogo(size: 130, color: AppColors.electricBlue),
+                opacity: 0.12,
+                child: MoneraLogo(
+                  size: 130,
+                  color: AppColors.textPrimary.withOpacity(0.72),
+                ),
               ),
             ),
             Padding(
@@ -204,7 +148,9 @@ class WalletHomeScreen extends ConsumerWidget {
                         constraints: const BoxConstraints(),
                         onPressed: () => notifier.toggleBalanceVisibility(),
                         icon: Icon(
-                          state.isBalanceVisible ? Icons.visibility_outlined : Icons.visibility_off_outlined,
+                          state.isBalanceVisible
+                              ? Icons.visibility_outlined
+                              : Icons.visibility_off_outlined,
                           color: AppColors.textSecondary,
                           size: 18,
                         ),
@@ -235,7 +181,10 @@ class WalletHomeScreen extends ConsumerWidget {
                       const SizedBox(width: 6),
                       Text(
                         '≈ \$${state.availableBalanceUsd.toStringAsFixed(2)} USDC on Monad L1 Ledger',
-                        style: const TextStyle(fontSize: 11, color: AppColors.lightBlue, fontWeight: FontWeight.w500),
+                        style: const TextStyle(
+                            fontSize: 11,
+                            color: AppColors.lightBlue,
+                            fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),
@@ -333,19 +282,27 @@ class WalletHomeScreen extends ConsumerWidget {
               width: 42,
               height: 42,
               decoration: BoxDecoration(
-                gradient: const LinearGradient(colors: [AppColors.deepNavy, AppColors.cobaltBlue]),
+                gradient: const LinearGradient(
+                    colors: [AppColors.deepNavy, AppColors.cobaltBlue]),
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: const Icon(Icons.credit_card, color: AppColors.electricBlue, size: 22),
+              child: const Icon(Icons.credit_card,
+                  color: AppColors.electricBlue, size: 22),
             ),
             const SizedBox(width: 12),
             const Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Sudo Mastercard •••• 4821', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: AppColors.textPrimary)),
+                  Text('Sudo Mastercard •••• 4821',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
+                          color: AppColors.textPrimary)),
                   SizedBox(height: 2),
-                  Text('JIT Webhook <200ms Active • Instant POS', style: TextStyle(color: AppColors.textSecondary, fontSize: 11)),
+                  Text('JIT Webhook <200ms Active • Instant POS',
+                      style: TextStyle(
+                          color: AppColors.textSecondary, fontSize: 11)),
                 ],
               ),
             ),
@@ -355,7 +312,11 @@ class WalletHomeScreen extends ConsumerWidget {
                 color: AppColors.emeraldGreen.withOpacity(0.15),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: const Text('ACTIVE', style: TextStyle(color: AppColors.emeraldGreen, fontSize: 10, fontWeight: FontWeight.bold)),
+              child: const Text('ACTIVE',
+                  style: TextStyle(
+                      color: AppColors.emeraldGreen,
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold)),
             ),
           ],
         ),
@@ -369,17 +330,24 @@ class WalletHomeScreen extends ConsumerWidget {
       children: [
         Text(
           'Recent Ledger Activity',
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: AppColors.textPrimary),
+          style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: AppColors.textPrimary),
         ),
         Text(
           'Sub-second settlement',
-          style: TextStyle(fontSize: 11, color: AppColors.electricBlue, fontWeight: FontWeight.w600),
+          style: TextStyle(
+              fontSize: 11,
+              color: AppColors.electricBlue,
+              fontWeight: FontWeight.w600),
         ),
       ],
     );
   }
 
-  Widget _buildTransactionList(BuildContext context, List<TransactionModel> txs) {
+  Widget _buildTransactionList(
+      BuildContext context, List<TransactionModel> txs) {
     return Column(
       children: txs.map((tx) {
         final isCredit = tx.isCredit;
@@ -401,12 +369,17 @@ class WalletHomeScreen extends ConsumerWidget {
                     width: 40,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: (isCredit ? AppColors.emeraldGreen : AppColors.electricBlue).withOpacity(0.14),
+                      color: (isCredit
+                              ? AppColors.emeraldGreen
+                              : AppColors.electricBlue)
+                          .withOpacity(0.14),
                       borderRadius: BorderRadius.circular(14),
                     ),
                     child: Icon(
                       isCredit ? Icons.arrow_downward : Icons.arrow_upward,
-                      color: isCredit ? AppColors.emeraldGreen : AppColors.electricBlue,
+                      color: isCredit
+                          ? AppColors.emeraldGreen
+                          : AppColors.electricBlue,
                       size: 20,
                     ),
                   ),
@@ -415,8 +388,16 @@ class WalletHomeScreen extends ConsumerWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(tx.title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: AppColors.textPrimary)),
-                        Text(tx.description, style: const TextStyle(color: AppColors.textSecondary, fontSize: 10), maxLines: 1, overflow: TextOverflow.ellipsis),
+                        Text(tx.title,
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13,
+                                color: AppColors.textPrimary)),
+                        Text(tx.description,
+                            style: const TextStyle(
+                                color: AppColors.textSecondary, fontSize: 10),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis),
                       ],
                     ),
                   ),
@@ -428,13 +409,18 @@ class WalletHomeScreen extends ConsumerWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 13,
-                          color: isCredit ? AppColors.emeraldGreen : AppColors.textPrimary,
+                          color: isCredit
+                              ? AppColors.emeraldGreen
+                              : AppColors.textPrimary,
                         ),
                       ),
                       if (tx.latencyMs != null)
                         Text(
                           '${tx.latencyMs}ms JIT',
-                          style: const TextStyle(color: AppColors.electricBlue, fontSize: 9, fontWeight: FontWeight.bold),
+                          style: const TextStyle(
+                              color: AppColors.electricBlue,
+                              fontSize: 9,
+                              fontWeight: FontWeight.bold),
                         ),
                     ],
                   ),
@@ -473,7 +459,10 @@ class WalletHomeScreen extends ConsumerWidget {
             const SizedBox(height: 16),
             const Text(
               'Fund via Nigerian Bank Transfer',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppColors.textPrimary),
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textPrimary),
             ),
             const SizedBox(height: 6),
             const Text(
@@ -493,16 +482,28 @@ class WalletHomeScreen extends ConsumerWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Bank Name', style: TextStyle(color: AppColors.textSecondary, fontSize: 12)),
-                      Text('Wema Bank / ALAT', style: TextStyle(color: AppColors.textPrimary, fontWeight: FontWeight.bold, fontSize: 13)),
+                      Text('Bank Name',
+                          style: TextStyle(
+                              color: AppColors.textSecondary, fontSize: 12)),
+                      Text('Wema Bank / ALAT',
+                          style: TextStyle(
+                              color: AppColors.textPrimary,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13)),
                     ],
                   ),
                   SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Account Number', style: TextStyle(color: AppColors.textSecondary, fontSize: 12)),
-                      Text('0291884721', style: TextStyle(color: AppColors.electricBlue, fontWeight: FontWeight.bold, fontSize: 14)),
+                      Text('Account Number',
+                          style: TextStyle(
+                              color: AppColors.textSecondary, fontSize: 12)),
+                      Text('0291884721',
+                          style: TextStyle(
+                              color: AppColors.electricBlue,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14)),
                     ],
                   ),
                 ],
@@ -515,7 +516,8 @@ class WalletHomeScreen extends ConsumerWidget {
                 notifier.simulateDeposit(50000.00);
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
-                    content: Text('₦50,000.00 simulated deposit credited to Monad L1!'),
+                    content: Text(
+                        '₦50,000.00 simulated deposit credited to Monad L1!'),
                     backgroundColor: AppColors.emeraldGreen,
                   ),
                 );
@@ -524,7 +526,9 @@ class WalletHomeScreen extends ConsumerWidget {
                 backgroundColor: AppColors.electricBlue,
                 minimumSize: const Size(double.infinity, 48),
               ),
-              child: const Text('Simulate ₦50,000 Inbound Transfer', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+              child: const Text('Simulate ₦50,000 Inbound Transfer',
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold)),
             ),
           ],
         ),
