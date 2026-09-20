@@ -59,10 +59,10 @@ class _EarnScreenState extends ConsumerState<EarnScreen> {
                   ],
                 ),
                 borderRadius: BorderRadius.circular(26),
-                border: Border.all(color: AppColors.electricBlue.withOpacity(0.4), width: 1.2),
+                border: Border.all(color: AppColors.electricBlue.withValues(alpha: 0.4), width: 1.2),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.cobaltBlue.withOpacity(0.25),
+                    color: AppColors.cobaltBlue.withValues(alpha: 0.25),
                     blurRadius: 25,
                     offset: const Offset(0, 8),
                   ),
@@ -86,9 +86,9 @@ class _EarnScreenState extends ConsumerState<EarnScreen> {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 4),
                         decoration: BoxDecoration(
-                          color: AppColors.emeraldGreen.withOpacity(0.15),
+                          color: AppColors.emeraldGreen.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: AppColors.emeraldGreen.withOpacity(0.4)),
+                          border: Border.all(color: AppColors.emeraldGreen.withValues(alpha: 0.4)),
                         ),
                         child: Text(
                           '${vault.apyPercent}% Net APY',

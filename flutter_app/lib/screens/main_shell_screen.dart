@@ -47,13 +47,13 @@ class MainShellScreen extends StatelessWidget {
       body: child,
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: const Color(0xFF060B18).withOpacity(0.98),
+          color: const Color(0xFF060B18).withValues(alpha: 0.98),
           border: const Border(
             top: BorderSide(color: Color(0xFF0F1E3D), width: 1),
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.8),
+              color: Colors.black.withValues(alpha: 0.8),
               blurRadius: 20,
               offset: const Offset(0, -4),
             ),
@@ -129,7 +129,7 @@ class MainShellScreen extends StatelessWidget {
         duration: const Duration(milliseconds: 200),
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
         decoration: BoxDecoration(
-          color: isActive ? AppColors.electricBlue.withOpacity(0.12) : Colors.transparent,
+          color: isActive ? AppColors.electricBlue.withValues(alpha: 0.12) : Colors.transparent,
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(

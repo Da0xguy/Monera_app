@@ -91,14 +91,14 @@ class _CardsScreenState extends ConsumerState<CardsScreen> {
                   gradient: isFrozen ? AppColors.frozenCardGradient : AppColors.virtualCardGradient,
                   borderRadius: BorderRadius.circular(26),
                   border: Border.all(
-                    color: isFrozen ? Colors.blueGrey : AppColors.electricBlue.withOpacity(0.5),
+                    color: isFrozen ? Colors.blueGrey : AppColors.electricBlue.withValues(alpha: 0.5),
                     width: 1.5,
                   ),
                   boxShadow: [
                     BoxShadow(
                       color: isFrozen
-                          ? Colors.black.withOpacity(0.5)
-                          : AppColors.cobaltBlue.withOpacity(0.35),
+                          ? Colors.black.withValues(alpha: 0.5)
+                          : AppColors.cobaltBlue.withValues(alpha: 0.35),
                       blurRadius: 30,
                       offset: const Offset(0, 12),
                     ),
@@ -118,7 +118,7 @@ class _CardsScreenState extends ConsumerState<CardsScreen> {
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 3),
                           decoration: BoxDecoration(
-                            color: isFrozen ? AppColors.crimsonRed.withOpacity(0.25) : AppColors.emeraldGreen.withOpacity(0.25),
+                            color: isFrozen ? AppColors.crimsonRed.withValues(alpha: 0.25) : AppColors.emeraldGreen.withValues(alpha: 0.25),
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(
                               color: isFrozen ? AppColors.crimsonRed : AppColors.emeraldGreen,

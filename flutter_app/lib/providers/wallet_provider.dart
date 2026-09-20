@@ -2,7 +2,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/transaction_model.dart';
 import '../models/user_model.dart';
-import 'api_providers.dart';
 
 enum CurrencyType { ngn, usd, monad }
 

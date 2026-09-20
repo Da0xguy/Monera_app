@@ -68,7 +68,7 @@ class SettingsScreen extends ConsumerWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
-                    color: AppColors.emeraldGreen.withOpacity(0.15),
+                    color: AppColors.emeraldGreen.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: const Text('Tier 3',
@@ -112,7 +112,7 @@ class SettingsScreen extends ConsumerWidget {
             trailing: Switch(
               value: true,
               onChanged: (v) {},
-              activeColor: AppColors.electricBlue,
+              activeThumbColor: AppColors.electricBlue,
             ),
           ),
           _buildItem(Icons.pin, 'Transaction PIN',

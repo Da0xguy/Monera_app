@@ -14,7 +14,6 @@ class AppTheme {
         primary: AppColors.electricBlue,
         secondary: AppColors.emeraldGreen,
         surface: AppColors.surface,
-        background: AppColors.background,
         error: AppColors.crimsonRed,
         onPrimary: AppColors.black,
         onSurface: AppColors.textPrimary,

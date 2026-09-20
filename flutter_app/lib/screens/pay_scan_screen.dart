@@ -95,7 +95,7 @@ class _PayScanScreenState extends ConsumerState<PayScanScreen>
                 border: Border.all(color: AppColors.electricBlue, width: 2),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.electricBlue.withOpacity(0.2),
+                    color: AppColors.electricBlue.withValues(alpha: 0.2),
                     blurRadius: 25,
                   ),
                 ],
@@ -143,7 +143,7 @@ class _PayScanScreenState extends ConsumerState<PayScanScreen>
                           color: AppColors.electricBlue,
                           boxShadow: [
                             BoxShadow(
-                              color: AppColors.electricBlue.withOpacity(0.9),
+                              color: AppColors.electricBlue.withValues(alpha: 0.9),
                               blurRadius: 8,
                               spreadRadius: 2,
                             ),
@@ -157,10 +157,10 @@ class _PayScanScreenState extends ConsumerState<PayScanScreen>
                         padding: const EdgeInsets.symmetric(
                             horizontal: 10, vertical: 5),
                         decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(0.8),
+                          color: Colors.black.withValues(alpha: 0.8),
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
-                              color: AppColors.emeraldGreen.withOpacity(0.5)),
+                              color: AppColors.emeraldGreen.withValues(alpha: 0.5)),
                         ),
                         child: const Row(
                           mainAxisSize: MainAxisSize.min,

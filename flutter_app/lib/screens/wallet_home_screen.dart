@@ -60,7 +60,7 @@ class WalletHomeScreen extends ConsumerWidget {
       children: [
         MoneraLogo(
           size: 28,
-          color: AppColors.textPrimary.withOpacity(0.9),
+          color: AppColors.textPrimary.withValues(alpha: 0.9),
         ),
         const SizedBox(width: 12),
         Column(
@@ -102,10 +102,10 @@ class WalletHomeScreen extends ConsumerWidget {
         gradient: AppColors.balanceCardGradient,
         borderRadius: BorderRadius.circular(26),
         border: Border.all(
-            color: AppColors.borderGlow.withOpacity(0.6), width: 1.2),
+            color: AppColors.borderGlow.withValues(alpha: 0.6), width: 1.2),
         boxShadow: [
           BoxShadow(
-            color: AppColors.cobaltBlue.withOpacity(0.2),
+            color: AppColors.cobaltBlue.withValues(alpha: 0.2),
             blurRadius: 25,
             offset: const Offset(0, 8),
           ),
@@ -122,7 +122,7 @@ class WalletHomeScreen extends ConsumerWidget {
                 opacity: 0.12,
                 child: MoneraLogo(
                   size: 130,
-                  color: AppColors.textPrimary.withOpacity(0.72),
+                  color: AppColors.textPrimary.withValues(alpha: 0.72),
                 ),
               ),
             ),
@@ -246,9 +246,9 @@ class WalletHomeScreen extends ConsumerWidget {
             width: 54,
             height: 54,
             decoration: BoxDecoration(
-              color: color.withOpacity(0.12),
+              color: color.withValues(alpha: 0.12),
               borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: color.withOpacity(0.35), width: 1),
+              border: Border.all(color: color.withValues(alpha: 0.35), width: 1),
             ),
             child: Icon(icon, color: color, size: 24),
           ),
@@ -274,7 +274,7 @@ class WalletHomeScreen extends ConsumerWidget {
         decoration: BoxDecoration(
           color: AppColors.surface,
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: AppColors.borderGlow.withOpacity(0.4)),
+          border: Border.all(color: AppColors.borderGlow.withValues(alpha: 0.4)),
         ),
         child: Row(
           children: [
@@ -309,7 +309,7 @@ class WalletHomeScreen extends ConsumerWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
-                color: AppColors.emeraldGreen.withOpacity(0.15),
+                color: AppColors.emeraldGreen.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: const Text('ACTIVE',
@@ -372,7 +372,7 @@ class WalletHomeScreen extends ConsumerWidget {
                       color: (isCredit
                               ? AppColors.emeraldGreen
                               : AppColors.electricBlue)
-                          .withOpacity(0.14),
+                          .withValues(alpha: 0.14),
                       borderRadius: BorderRadius.circular(14),
                     ),
                     child: Icon(

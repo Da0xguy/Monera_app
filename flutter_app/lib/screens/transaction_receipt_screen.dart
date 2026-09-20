@@ -43,10 +43,10 @@ class TransactionReceiptScreen extends StatelessWidget {
                   width: 64,
                   height: 64,
                   decoration: BoxDecoration(
-                    color: (isCredit ? AppColors.emeraldGreen : AppColors.electricBlue).withOpacity(0.15),
+                    color: (isCredit ? AppColors.emeraldGreen : AppColors.electricBlue).withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(24),
                     border: Border.all(
-                      color: (isCredit ? AppColors.emeraldGreen : AppColors.electricBlue).withOpacity(0.4),
+                      color: (isCredit ? AppColors.emeraldGreen : AppColors.electricBlue).withValues(alpha: 0.4),
                       width: 1.5,
                     ),
                   ),
