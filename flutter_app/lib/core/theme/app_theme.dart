@@ -4,18 +4,18 @@ import 'package:flutter/services.dart';
 import '../constants/app_colors.dart';
 
 class AppTheme {
-  static ThemeData get darkTheme {
+  static ThemeData get lightTheme {
     return ThemeData(
       useMaterial3: true,
-      brightness: Brightness.dark,
+      brightness: Brightness.light,
       scaffoldBackgroundColor: AppColors.background,
-      primaryColor: AppColors.electricBlue,
-      colorScheme: const ColorScheme.dark(
-        primary: AppColors.electricBlue,
-        secondary: AppColors.emeraldGreen,
+      primaryColor: AppColors.darkGreen,
+      colorScheme: const ColorScheme.light(
+        primary: AppColors.darkGreen,
+        secondary: AppColors.lime,
         surface: AppColors.surface,
         error: AppColors.crimsonRed,
-        onPrimary: AppColors.black,
+        onPrimary: AppColors.white,
         onSurface: AppColors.textPrimary,
       ),
       fontFamily: 'PlusJakartaSans',
@@ -25,9 +25,9 @@ class AppTheme {
         centerTitle: false,
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
-          statusBarIconBrightness: Brightness.light,
+          statusBarIconBrightness: Brightness.dark,
           systemNavigationBarColor: AppColors.background,
-          systemNavigationBarIconBrightness: Brightness.light,
+          systemNavigationBarIconBrightness: Brightness.dark,
         ),
         titleTextStyle: TextStyle(
           color: AppColors.textPrimary,
@@ -46,8 +46,8 @@ class AppTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.electricBlue,
-          foregroundColor: Colors.black,
+          backgroundColor: AppColors.darkGreen,
+          foregroundColor: AppColors.white,
           textStyle: const TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w700,
@@ -61,8 +61,8 @@ class AppTheme {
         ),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        backgroundColor: AppColors.background,
-        selectedItemColor: AppColors.electricBlue,
+        backgroundColor: AppColors.surface,
+        selectedItemColor: AppColors.darkGreen,
         unselectedItemColor: AppColors.textTertiary,
         type: BottomNavigationBarType.fixed,
         elevation: 0,
@@ -77,4 +77,6 @@ class AppTheme {
       ),
     );
   }
+
+  static ThemeData get darkTheme => lightTheme;
 }

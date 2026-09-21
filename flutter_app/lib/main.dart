@@ -9,13 +9,13 @@ import 'core/constants/app_colors.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Enforce native immersive status bar with Black & Blue styling
+  // Enforce native immersive status bar with clean light styling
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
-      statusBarIconBrightness: Brightness.light,
+      statusBarIconBrightness: Brightness.dark,
       systemNavigationBarColor: AppColors.background,
-      systemNavigationBarIconBrightness: Brightness.light,
+      systemNavigationBarIconBrightness: Brightness.dark,
       systemNavigationBarDividerColor: Colors.transparent,
     ),
   );
@@ -35,7 +35,7 @@ class MoneraNeobankApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Monera Neobank',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.darkTheme,
+      theme: AppTheme.lightTheme,
       routerConfig: appRouter,
     );
   }

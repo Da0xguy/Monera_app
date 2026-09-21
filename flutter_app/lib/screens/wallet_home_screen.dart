@@ -101,12 +101,12 @@ class WalletHomeScreen extends ConsumerWidget {
       decoration: BoxDecoration(
         gradient: AppColors.balanceCardGradient,
         borderRadius: BorderRadius.circular(26),
-        border: Border.all(
-            color: AppColors.borderGlow.withValues(alpha: 0.6), width: 1.2),
+        border:
+            Border.all(color: Colors.black.withValues(alpha: 0.15), width: 1.0),
         boxShadow: [
           BoxShadow(
-            color: AppColors.cobaltBlue.withValues(alpha: 0.2),
-            blurRadius: 25,
+            color: Colors.black.withValues(alpha: 0.12),
+            blurRadius: 20,
             offset: const Offset(0, 8),
           ),
         ],
@@ -115,14 +115,14 @@ class WalletHomeScreen extends ConsumerWidget {
         borderRadius: BorderRadius.circular(26),
         child: Stack(
           children: [
-            Positioned(
+            const Positioned(
               right: -15,
               bottom: -15,
               child: Opacity(
-                opacity: 0.12,
+                opacity: 0.08,
                 child: MoneraLogo(
                   size: 130,
-                  color: AppColors.textPrimary.withValues(alpha: 0.72),
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -138,7 +138,7 @@ class WalletHomeScreen extends ConsumerWidget {
                         'AVAILABLE BALANCE',
                         style: TextStyle(
                           fontSize: 10,
-                          color: AppColors.lightBlue,
+                          color: Colors.white,
                           letterSpacing: 1.2,
                           fontWeight: FontWeight.w700,
                         ),
@@ -151,7 +151,7 @@ class WalletHomeScreen extends ConsumerWidget {
                           state.isBalanceVisible
                               ? Icons.visibility_outlined
                               : Icons.visibility_off_outlined,
-                          color: AppColors.textSecondary,
+                          color: Colors.white,
                           size: 18,
                         ),
                       ),
@@ -163,7 +163,7 @@ class WalletHomeScreen extends ConsumerWidget {
                     style: const TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.w800,
-                      color: AppColors.textPrimary,
+                      color: AppColors.white,
                       letterSpacing: -0.5,
                     ),
                   ),
@@ -174,7 +174,7 @@ class WalletHomeScreen extends ConsumerWidget {
                         width: 7,
                         height: 7,
                         decoration: const BoxDecoration(
-                          color: AppColors.electricBlue,
+                          color: AppColors.lime,
                           shape: BoxShape.circle,
                         ),
                       ),
@@ -183,7 +183,7 @@ class WalletHomeScreen extends ConsumerWidget {
                         '≈ \$${state.availableBalanceUsd.toStringAsFixed(2)} USDC on Monad L1 Ledger',
                         style: const TextStyle(
                             fontSize: 11,
-                            color: AppColors.lightBlue,
+                            color: Colors.white,
                             fontWeight: FontWeight.w500),
                       ),
                     ],
@@ -204,7 +204,7 @@ class WalletHomeScreen extends ConsumerWidget {
         _buildActionItem(
           icon: Icons.add,
           label: 'Deposit',
-          color: AppColors.emeraldGreen,
+          color: AppColors.darkGreen,
           onTap: () {
             // Show bottom sheet with Wema virtual account & instant simulator
             _showDepositModal(context, notifier);
@@ -213,19 +213,19 @@ class WalletHomeScreen extends ConsumerWidget {
         _buildActionItem(
           icon: Icons.qr_code_scanner,
           label: 'Pay & Scan',
-          color: AppColors.electricBlue,
+          color: AppColors.darkGreen,
           onTap: () => context.go('/pay-scan'),
         ),
         _buildActionItem(
           icon: Icons.credit_card,
           label: 'Cards',
-          color: AppColors.lightBlue,
+          color: AppColors.darkGreen,
           onTap: () => context.go('/cards'),
         ),
         _buildActionItem(
           icon: Icons.trending_up,
           label: 'Earn',
-          color: AppColors.cobaltBlue,
+          color: AppColors.darkGreen,
           onTap: () => context.go('/earn'),
         ),
       ],
@@ -243,14 +243,21 @@ class WalletHomeScreen extends ConsumerWidget {
       child: Column(
         children: [
           Container(
-            width: 54,
-            height: 54,
+            width: 56,
+            height: 56,
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.12),
+              color: AppColors.surface,
               borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: color.withValues(alpha: 0.35), width: 1),
+              border: Border.all(color: AppColors.borderSubtle, width: 1),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.03),
+                  blurRadius: 8,
+                  offset: const Offset(0, 2),
+                ),
+              ],
             ),
-            child: Icon(icon, color: color, size: 24),
+            child: Icon(icon, color: AppColors.textPrimary, size: 24),
           ),
           const SizedBox(height: 6),
           Text(
@@ -274,7 +281,14 @@ class WalletHomeScreen extends ConsumerWidget {
         decoration: BoxDecoration(
           color: AppColors.surface,
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: AppColors.borderGlow.withValues(alpha: 0.4)),
+          border: Border.all(color: AppColors.borderSubtle),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.02),
+              blurRadius: 8,
+              offset: const Offset(0, 2),
+            ),
+          ],
         ),
         child: Row(
           children: [
@@ -283,11 +297,11 @@ class WalletHomeScreen extends ConsumerWidget {
               height: 42,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                    colors: [AppColors.deepNavy, AppColors.cobaltBlue]),
+                    colors: [AppColors.darkGreen, Color(0xFF0F5132)]),
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: const Icon(Icons.credit_card,
-                  color: AppColors.electricBlue, size: 22),
+              child:
+                  const Icon(Icons.credit_card, color: Colors.white, size: 22),
             ),
             const SizedBox(width: 12),
             const Expanded(
@@ -309,12 +323,12 @@ class WalletHomeScreen extends ConsumerWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
-                color: AppColors.emeraldGreen.withValues(alpha: 0.15),
+                color: AppColors.lime.withValues(alpha: 0.25),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: const Text('ACTIVE',
                   style: TextStyle(
-                      color: AppColors.emeraldGreen,
+                      color: AppColors.darkGreen,
                       fontSize: 10,
                       fontWeight: FontWeight.bold)),
             ),
@@ -339,7 +353,7 @@ class WalletHomeScreen extends ConsumerWidget {
           'Sub-second settlement',
           style: TextStyle(
               fontSize: 11,
-              color: AppColors.electricBlue,
+              color: AppColors.darkGreen,
               fontWeight: FontWeight.w600),
         ),
       ],
@@ -362,6 +376,13 @@ class WalletHomeScreen extends ConsumerWidget {
                 color: AppColors.surface,
                 borderRadius: BorderRadius.circular(18),
                 border: Border.all(color: AppColors.borderSubtle),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.02),
+                    blurRadius: 6,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
               ),
               child: Row(
                 children: [
@@ -369,17 +390,16 @@ class WalletHomeScreen extends ConsumerWidget {
                     width: 40,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: (isCredit
-                              ? AppColors.emeraldGreen
-                              : AppColors.electricBlue)
-                          .withValues(alpha: 0.14),
+                      color: isCredit
+                          ? AppColors.emeraldGreen.withValues(alpha: 0.12)
+                          : AppColors.textSecondary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(14),
                     ),
                     child: Icon(
                       isCredit ? Icons.arrow_downward : Icons.arrow_upward,
                       color: isCredit
                           ? AppColors.emeraldGreen
-                          : AppColors.electricBlue,
+                          : AppColors.textPrimary,
                       size: 20,
                     ),
                   ),
@@ -418,7 +438,7 @@ class WalletHomeScreen extends ConsumerWidget {
                         Text(
                           '${tx.latencyMs}ms JIT',
                           style: const TextStyle(
-                              color: AppColors.electricBlue,
+                              color: AppColors.darkGreen,
                               fontSize: 9,
                               fontWeight: FontWeight.bold),
                         ),
@@ -451,7 +471,7 @@ class WalletHomeScreen extends ConsumerWidget {
                 width: 40,
                 height: 4,
                 decoration: BoxDecoration(
-                  color: AppColors.textTertiary,
+                  color: AppColors.borderSubtle,
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
@@ -473,9 +493,9 @@ class WalletHomeScreen extends ConsumerWidget {
             Container(
               padding: const EdgeInsets.all(14),
               decoration: BoxDecoration(
-                color: AppColors.surfaceElevated,
+                color: AppColors.background,
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: AppColors.borderGlow),
+                border: Border.all(color: AppColors.borderSubtle),
               ),
               child: const Column(
                 children: [
@@ -501,7 +521,7 @@ class WalletHomeScreen extends ConsumerWidget {
                               color: AppColors.textSecondary, fontSize: 12)),
                       Text('0291884721',
                           style: TextStyle(
-                              color: AppColors.electricBlue,
+                              color: AppColors.darkGreen,
                               fontWeight: FontWeight.bold,
                               fontSize: 14)),
                     ],
@@ -523,12 +543,12 @@ class WalletHomeScreen extends ConsumerWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.electricBlue,
+                backgroundColor: AppColors.darkGreen,
                 minimumSize: const Size(double.infinity, 48),
               ),
               child: const Text('Simulate ₦50,000 Inbound Transfer',
                   style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold)),
+                      color: Colors.white, fontWeight: FontWeight.bold)),
             ),
           ],
         ),

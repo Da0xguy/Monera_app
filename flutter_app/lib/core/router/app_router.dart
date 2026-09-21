@@ -8,6 +8,7 @@ import '../../screens/cards_screen.dart';
 import '../../screens/earn_screen.dart';
 import '../../screens/settings_screen.dart';
 import '../../screens/transaction_receipt_screen.dart';
+import '../../screens/auth_screen.dart';
 import '../../models/transaction_model.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
@@ -19,6 +20,11 @@ final GoRouter appRouter = GoRouter(
   navigatorKey: _rootNavigatorKey,
   initialLocation: '/wallet',
   routes: [
+    GoRoute(
+      path: '/auth',
+      parentNavigatorKey: _rootNavigatorKey,
+      builder: (context, state) => const AuthScreen(),
+    ),
     ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (context, state, child) {

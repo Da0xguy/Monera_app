@@ -5,14 +5,23 @@ class TransactionModel {
   final String description;
   final double amountNgn;
   final double amountUsd;
-  final String type; // 'pos_purchase' | 'online_purchase' | 'nqr_merchant' | 'bank_transfer' | 'deposit' | 'earn_yield'
-  final String channel; // 'sudo_mastercard' | 'nibss_nqr' | 'nip_transfer' | 'monad_l1' | 'vault'
+  final String
+      type; // 'pos_purchase' | 'online_purchase' | 'nqr_merchant' | 'bank_transfer' | 'deposit' | 'earn_yield'
+  final String
+      channel; // 'sudo_mastercard' | 'nibss_nqr' | 'nip_transfer' | 'monad_l1' | 'vault'
   final String status; // 'settled' | 'pending' | 'failed'
   final DateTime createdAt;
   final String? authorizationCode;
   final int? latencyMs;
   final String? onChainTxRef;
   final String? merchantCategory;
+
+  final String? senderName;
+  final String? recipientName;
+  final String? recipientBank;
+  final String? recipientAccount;
+  final String? sessionId;
+  final double feeNgn;
 
   const TransactionModel({
     required this.id,
@@ -28,6 +37,12 @@ class TransactionModel {
     this.latencyMs,
     this.onChainTxRef,
     this.merchantCategory,
+    this.senderName,
+    this.recipientName,
+    this.recipientBank,
+    this.recipientAccount,
+    this.sessionId,
+    this.feeNgn = 0.0,
   });
 
   bool get isCredit =>
@@ -50,6 +65,12 @@ class TransactionModel {
       latencyMs: json['latencyMs'] as int?,
       onChainTxRef: json['onChainTxRef'] as String?,
       merchantCategory: json['merchantCategory'] as String?,
+      senderName: json['senderName'] as String?,
+      recipientName: json['recipientName'] as String?,
+      recipientBank: json['recipientBank'] as String?,
+      recipientAccount: json['recipientAccount'] as String?,
+      sessionId: json['sessionId'] as String?,
+      feeNgn: (json['feeNgn'] as num?)?.toDouble() ?? 0.0,
     );
   }
 
@@ -67,5 +88,11 @@ class TransactionModel {
         'latencyMs': latencyMs,
         'onChainTxRef': onChainTxRef,
         'merchantCategory': merchantCategory,
+        'senderName': senderName,
+        'recipientName': recipientName,
+        'recipientBank': recipientBank,
+        'recipientAccount': recipientAccount,
+        'sessionId': sessionId,
+        'feeNgn': feeNgn,
       };
 }

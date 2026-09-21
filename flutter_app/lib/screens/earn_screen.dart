@@ -77,7 +77,7 @@ class _EarnScreenState extends ConsumerState<EarnScreen> {
                       const Text(
                         'IDLE CAPITAL YIELD VAULT',
                         style: TextStyle(
-                          color: AppColors.lightBlue,
+                          color: Colors.white,
                           fontSize: 10,
                           fontWeight: FontWeight.w700,
                           letterSpacing: 1.2,
@@ -107,7 +107,7 @@ class _EarnScreenState extends ConsumerState<EarnScreen> {
                     style: const TextStyle(
                       fontSize: 34,
                       fontWeight: FontWeight.w800,
-                      color: AppColors.textPrimary,
+                      color: Colors.white,
                       letterSpacing: -0.5,
                     ),
                   ),
@@ -115,7 +115,7 @@ class _EarnScreenState extends ConsumerState<EarnScreen> {
                   Text(
                     'Accrued Interest: +\$${vault.accruedYieldUsd.toStringAsFixed(5)} USDC',
                     style: const TextStyle(
-                      color: AppColors.electricBlue,
+                      color: Colors.white,
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
                       fontFamily: 'monospace',
@@ -171,13 +171,13 @@ class _EarnScreenState extends ConsumerState<EarnScreen> {
                         ? null
                         : () => ref.read(earnNotifierProvider.notifier).deposit(100.0),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.electricBlue,
+                      backgroundColor: AppColors.darkGreen,
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                     ),
                     child: earnState.isDepositing
-                        ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2))
-                        : const Text('Deposit \$100', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                        ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
+                        : const Text('Deposit \$100', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                   ),
                 ),
                 const SizedBox(width: 12),

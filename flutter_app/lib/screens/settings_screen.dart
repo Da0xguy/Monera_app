@@ -1,8 +1,10 @@
 // lib/screens/settings_screen.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../core/constants/app_colors.dart';
 import '../providers/wallet_provider.dart';
+import '../providers/auth_provider.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -124,6 +126,30 @@ class SettingsScreen extends ConsumerWidget {
               'https://rpc.monad.xyz (10,000 TPS)'),
           _buildItem(Icons.link, 'Privy Embedded Wallet',
               '${user.walletAddress.substring(0, 8)}...${user.walletAddress.substring(user.walletAddress.length - 6)}'),
+          const SizedBox(height: 20),
+
+          _buildSectionHeader('SESSION & ACCOUNT'),
+          GestureDetector(
+            onTap: () {
+              ref.read(authNotifierProvider.notifier).signOut();
+              context.go('/auth');
+            },
+            child: _buildItem(
+              Icons.logout,
+              'Sign Out',
+              'Lock session and return to Login screen',
+              trailing: const Icon(Icons.arrow_forward_ios,
+                  size: 14, color: AppColors.crimsonRed),
+            ),
+          ),
+          const SizedBox(height: 12),
+          const Center(
+            child: Text(
+              'Monera v0.1.0 • Monad L1 MVP (Nigeria Launch)',
+              style: TextStyle(fontSize: 10, color: AppColors.textTertiary),
+            ),
+          ),
+          const SizedBox(height: 20),
         ],
       ),
     );
@@ -190,7 +216,7 @@ class SettingsScreen extends ConsumerWidget {
               style: TextStyle(
                 fontSize: 11,
                 fontWeight: FontWeight.bold,
-                color: isSelected ? Colors.black : AppColors.textPrimary,
+                color: isSelected ? Colors.white : AppColors.textPrimary,
               ),
             ),
           ),

@@ -97,7 +97,14 @@ class WalletNotifier extends StateNotifier<WalletState> {
                 createdAt: DateTime.now().subtract(const Duration(minutes: 24)),
                 authorizationCode: 'AUTH_SUDO_88329',
                 latencyMs: 67,
-                onChainTxRef: '0x9a8f23b1c4e7...001',
+                onChainTxRef:
+                    '0x9a8f23b1c4e7d8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e001',
+                senderName: 'Soma Orakwue',
+                recipientName: 'Uber Lagos B.V.',
+                recipientBank: 'Mastercard Worldwide Switch',
+                recipientAccount: 'MCC: 4121 (Taxicabs)',
+                sessionId: '100004202609201808249821849102',
+                feeNgn: 0.0,
               ),
               TransactionModel(
                 id: 'tx_nqr_002',
@@ -111,7 +118,14 @@ class WalletNotifier extends StateNotifier<WalletState> {
                 createdAt: DateTime.now().subtract(const Duration(hours: 3)),
                 authorizationCode: 'NQR_REF_991823',
                 latencyMs: 168,
-                onChainTxRef: '0x334bc12df09a...712',
+                onChainTxRef:
+                    '0x334bc12df09ae4b2c1d3e5f7a9b0c2d4e6f8a1b3c5d7e9f0a2b4c6d8e0f1a712',
+                senderName: 'Soma Orakwue',
+                recipientName: 'Shoprite Lekki Mall',
+                recipientBank: 'NIBSS NQR Merchant Switch',
+                recipientAccount: '00020101021226500',
+                sessionId: '100004202609201530128472910482',
+                feeNgn: 0.0,
               ),
               TransactionModel(
                 id: 'tx_fund_003',
@@ -124,6 +138,14 @@ class WalletNotifier extends StateNotifier<WalletState> {
                 status: 'settled',
                 createdAt: DateTime.now().subtract(const Duration(hours: 18)),
                 latencyMs: 820,
+                onChainTxRef:
+                    '0x8891ac3b2d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f10',
+                senderName: 'Adeyemi Babatunde',
+                recipientName: 'Soma Orakwue',
+                recipientBank: 'Monera / Wema Bank',
+                recipientAccount: '8031234821',
+                sessionId: '100004202609200032158491028394',
+                feeNgn: 0.0,
               ),
             ],
           ),
@@ -152,7 +174,8 @@ class WalletNotifier extends StateNotifier<WalletState> {
       status: 'settled',
       createdAt: DateTime.now(),
       latencyMs: 450,
-      onChainTxRef: '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}...credit',
+      onChainTxRef:
+          '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}...credit',
     );
 
     state = state.copyWith(

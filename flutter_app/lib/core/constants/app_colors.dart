@@ -2,40 +2,47 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  // Client-approved palette
+  // Brand palette
   static const Color darkGreen = Color(0xFF063D2E);
   static const Color lime = Color(0xFFB7FF3B);
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Color(0xFF000000);
 
-  static const Color background = darkGreen;
-  static const Color surface = Color(0xFF0B4A3F);
-  static const Color surfaceElevated = Color(0xFF114D42);
-  static const Color surfaceCard = Color(0xFF1D5C52);
+  // Screen-matched modern light background and surface system
+  static const Color background = Color(0xFFF5F6F8);
+  static const Color surface = Color(0xFFFFFFFF);
+  static const Color surfaceElevated = Color(0xFFF8FAFC);
+  static const Color surfaceCard = Color(0xFFFFFFFF);
 
-  static const Color primaryAccent = lime;
-  static const Color primaryBlue = lime;
-  static const Color electricBlue = lime;
-  static const Color lightBlue = Color(0xFFD9FF99);
+  // Accents & interactive colors
+  static const Color primaryAccent = darkGreen;
+  static const Color primaryBlue = darkGreen;
+  static const Color electricBlue = darkGreen;
+  static const Color lightBlue = Color(0xFF10B981);
   static const Color deepNavy = darkGreen;
-  static const Color cobaltBlue = Color(0xFF6BB667);
+  static const Color cobaltBlue = Color(0xFF0F5132);
 
-  static const Color emeraldGreen = lime;
-  static const Color amberWarning = Color(0xFFE8FF7A);
-  static const Color crimsonRed = Color(0xFFDD4B39);
-  static const Color textPrimary = white;
-  static const Color textSecondary = Color(0xFFDBE5E1);
-  static const Color textTertiary = Color(0xFF9AAFA6);
+  // Functional Status
+  static const Color emeraldGreen = Color(0xFF10B981);
+  static const Color amberWarning = Color(0xFFD97706);
+  static const Color crimsonRed = Color(0xFFDC2626);
 
-  static const Color borderSubtle = Color(0xFF295B52);
-  static const Color borderGlow = lime;
+  // Typography for light background
+  static const Color textPrimary = Color(0xFF0F172A);
+  static const Color textSecondary = Color(0xFF64748B);
+  static const Color textTertiary = Color(0xFF94A3B8);
 
+  // Borders & Dividers
+  static const Color borderSubtle = Color(0xFFE2E8F0);
+  static const Color borderGlow = Color(0xFFCBD5E1);
+
+  // Total Balance Card: Deep obsidian with subtle emerald sheen
   static const LinearGradient balanceCardGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
     colors: [
-      Color(0xFF0B4A3F),
-      Color(0xFF063D2E),
+      Color(0xFF141E1A),
+      Color(0xFF07120E),
     ],
   );
 
@@ -43,8 +50,8 @@ class AppColors {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
     colors: [
-      Color(0xFFB7FF3B),
-      Color(0xFF77C98E),
+      Color(0xFF063D2E),
+      Color(0xFF0B5943),
     ],
   );
 
@@ -52,8 +59,8 @@ class AppColors {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
     colors: [
-      Color(0xFF1F4A42),
-      Color(0xFF0E3B35),
+      Color(0xFF64748B),
+      Color(0xFF475569),
     ],
   );
 
@@ -61,8 +68,8 @@ class AppColors {
     begin: Alignment.centerLeft,
     end: Alignment.centerRight,
     colors: [
-      Color(0xFFB7FF3B),
-      Color(0xFFE4FF88),
+      Color(0xFF063D2E),
+      Color(0xFF0B5943),
     ],
   );
 }
